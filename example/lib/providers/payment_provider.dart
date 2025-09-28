@@ -35,13 +35,13 @@ class PaymentProvider extends DefaultChangeNotifier {
       /// Step 4: Processing Payment [Amount multiply with 100] ex. 10 * 100 = 1000 (10 SAR)
       /// Amount value send always round ex. [100] not [100.00, 100.21]
       FortRequest request = FortRequest(
-        command: FortCommand.authorization,
-        amount: 10 * 100,
+        command: FortCommand.purchase,
+        amount: 64900,
         customerName: 'Test Customer',
-        customerEmail: 'test@customer.com',
+        customerEmail: "abokhadiga6@gmail.com",
         orderDescription: 'Test Order',
         sdkToken: sdkTokenResponse?.sdkToken ?? '',
-        merchantReference: const Uuid().v4(),
+        merchantReference: "83417",
         currency: 'SAR',
         customerIp: (await _info.getWifiIP() ?? ''),
       );
